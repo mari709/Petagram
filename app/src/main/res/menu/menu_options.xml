@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/menu_likes"
+        android:icon="@mipmap/star5"
+        android:orderInCategory="1"
+        android:title="@string/itemfavoritos"
+        app:showAsAction="ifRoom">
+
+    </item>
+
+    <item
+        android:id="@+id/menu_actionBar"
+        android:icon="@mipmap/three"
+        android:orderInCategory="50"
+        android:title="@string/menu_actionBar"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/item_contacto"
+                android:icon="@mipmap/email"
+                android:orderInCategory="100"
+                android:title="@string/contacto">
+
+            </item>
+
+            <item
+                android:id="@+id/item_acercade"
+                android:icon="@mipmap/about"
+                android:orderInCategory="105"
+                android:title="@string/acercade">
+
+            </item>
+        </menu>
+    </item>
+</menu>

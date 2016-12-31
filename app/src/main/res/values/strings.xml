@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Petagram</string>
+
+    <string name="pNombre">Nombre</string>
+    <string name="contacto">Contacto</string>
+    <string name="acercade">Acerca de</string>
+
+    <string name="bio1">Desarrollado por:</string>
+    <string name="bio2">Marina Mansueto (@mari709)</string>
+    <string name="bio3"> Desarrollo de Aplicaciones Móviles\nCoursera - Año 2016</string>
+
+
+
+    <string name="menu_actionBar">menu opciones</string>
+    <string name="itemfavoritos">itemFavoritos</string>
+    <string name="mensaje">Mensaje:</string>
+    <string name="enviar">Enviar</string>
+    <string name="pAsunto">Asunto:</string>
+    <string name="emailUsuario">usuariodeapp@gmail.com</string>
+    <string name="de">De:</string>
+    <string name="los_5_favoritos">LOS 5 FAVORITOS</string>
+    <string name="_0">0</string>
+    <string name="gato_ulises">Gato Ulises</string>
+
+
+</resources>
