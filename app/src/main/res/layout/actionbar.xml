@@ -8,6 +8,7 @@
     android:theme="@style/AppTheme.AppBarOverlay"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     android:elevation="@dimen/elevation_bar"
+    app:layout_scrollFlags="scroll|enterAlways"
     android:id="@+id/miActionBar">
 
     <LinearLayout
