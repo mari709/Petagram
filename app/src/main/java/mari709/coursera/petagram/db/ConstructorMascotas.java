@@ -2,7 +2,9 @@ package mari709.coursera.petagram.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+
 import java.util.ArrayList;
+
 import mari709.coursera.petagram.pojo.Mascota;
 import mari709.coursera.petagram.R;
 
@@ -11,29 +13,18 @@ public class ConstructorMascotas {
     private static final int LIKE = 1;
     private Context context;
 
-    public ConstructorMascotas(Context context){
+    public ConstructorMascotas(Context context) {
         this.context = context;
     }
 
-    public ArrayList<Mascota> obtenerDatos(){
+    public ArrayList<Mascota> obtenerDatos() {
 
-        BaseDatos db = new BaseDatos(context);
-        if (db.obtenerTodasLasMascotas() == null){
-            insertarMascotas(db);
-
-        }else{
-            db.onUpgrade(db.getReadableDatabase(),0,1);//2
-            insertarMascotas(db);
-
-        }
-
+        BaseDatos db = BaseDatos.getInstance(context);
+        insertarMascotas(db);
         return db.obtenerTodasLasMascotas();
-
-
-
     }
 
-    private void insertarMascotas(BaseDatos db){
+    private void insertarMascotas(BaseDatos db) {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_NOMBRE, "TOTO");
@@ -71,23 +62,18 @@ public class ConstructorMascotas {
         db.insertarMascota(contentValues);
     }
 
-    public void darLikeMascota (Mascota mascota){
+    public void darLikeMascota(Mascota mascota) {
 
-        BaseDatos db = new BaseDatos(context);
+        BaseDatos db = BaseDatos.getInstance(context);
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(ConstantesBaseDatos.TABLE_LIKES_ID_MASCOTA, mascota.getId());
         contentValues.put(ConstantesBaseDatos.TABLE_LIKES_MASCOTA_NUMERO_LIKES, LIKE);
         db.darLikeMascotaA(contentValues);
-
     }
 
-    public int obtenerLikesMascota(Mascota mascota){
-
-        BaseDatos db = new BaseDatos(context);
+    public int obtenerLikesMascota(Mascota mascota) {
+        BaseDatos db = BaseDatos.getInstance(context);
         return db.obtenerLikesMascotaA(mascota);
-
     }
-
-
 }

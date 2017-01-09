@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-
 import java.util.ArrayList;
-
 import mari709.coursera.petagram.R;
 import mari709.coursera.petagram.adaptador.MascotaAdaptador;
 import mari709.coursera.petagram.pojo.Mascota;
@@ -22,15 +20,16 @@ public class MascotaFavorita extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mascota_favorita);
 
-
         Toolbar miActionBar = (Toolbar) findViewById(R.id.miActionBar);
         setSupportActionBar(miActionBar);
 
-        miActionBar.setLogo(R.mipmap.logo_app);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setLogo(R.mipmap.logo_app);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
         //Incorporo flecha subir (establezco clase padre en el manifiesto)
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
         listaMascotas = (RecyclerView) findViewById(R.id.rv_favoritos);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);

@@ -19,21 +19,16 @@ import mari709.coursera.petagram.presentador.RecyclerViewFragmentPresenter;
 public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragmentView {
 
     private RecyclerView rv_mascotas;
-    private IRecyclerViewFragmentPresenter presenter;
-
+    public IRecyclerViewFragmentPresenter presenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_recycler_view, container, false);
-
         rv_mascotas = (RecyclerView) v.findViewById(R.id.rv_mascotas);
-
         presenter = new RecyclerViewFragmentPresenter(this, getContext());
-
         return v;
     }
-
 
     @Override
     public void generarLinearLayoutVertical() {
@@ -41,19 +36,15 @@ public class RecyclerViewFragment extends Fragment implements IRecyclerViewFragm
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rv_mascotas.setLayoutManager(llm);
-
     }
 
     @Override
     public MascotaAdaptador crearAdaptador(ArrayList<Mascota> mascotas) {
-
         return new MascotaAdaptador(mascotas, getActivity());
     }
 
     @Override
     public void inicializarAdaptadorRV(MascotaAdaptador adaptador) {
-
         rv_mascotas.setAdapter(adaptador);
-
     }
 }
