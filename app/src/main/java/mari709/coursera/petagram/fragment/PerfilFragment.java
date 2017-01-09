@@ -14,7 +14,6 @@ import mari709.coursera.petagram.R;
 import mari709.coursera.petagram.adaptador.PerfilAdaptador;
 import mari709.coursera.petagram.pojo.MascotaPerfil;
 
-
 public class PerfilFragment extends Fragment {
 
     private RecyclerView listaFotosPerfil;
@@ -36,19 +35,17 @@ public class PerfilFragment extends Fragment {
 
         iniciarListaFotosPerfil();
         inicializarAdaptador();
-
         return v;
 
     }
+    public PerfilAdaptador perfilAdaptador;
 
-public PerfilAdaptador perfilAdaptador;
-    public void inicializarAdaptador(){
-        perfilAdaptador =new PerfilAdaptador(miPerfil);
+    public void inicializarAdaptador() {
+        perfilAdaptador = new PerfilAdaptador(miPerfil);
         listaFotosPerfil.setAdapter(perfilAdaptador);
     }
 
-
-    public void iniciarListaFotosPerfil(){
+    public void iniciarListaFotosPerfil() {
         miPerfil = new ArrayList<>();
         miPerfil.add(new MascotaPerfil(R.drawable.uliseschico, 2));
         miPerfil.add(new MascotaPerfil(R.drawable.uliseschico, 34));
@@ -56,7 +53,5 @@ public PerfilAdaptador perfilAdaptador;
         miPerfil.add(new MascotaPerfil(R.drawable.uliseschico, 3));
         miPerfil.add(new MascotaPerfil(R.drawable.uliseschico, 8));
         miPerfil.add(new MascotaPerfil(R.drawable.uliseschico, 5));
-
     }
-
 }

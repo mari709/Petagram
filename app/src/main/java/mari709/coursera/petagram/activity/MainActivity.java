@@ -10,9 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-
 import mari709.coursera.petagram.R;
 import mari709.coursera.petagram.adaptador.PageAdapter;
 import mari709.coursera.petagram.fragment.InstagramFragment;
@@ -30,19 +28,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         miActionBar = (Toolbar) findViewById(R.id.miActionBar);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         setUpViewPager();
+        setSupportActionBar(miActionBar);
 
-
-        if (miActionBar != null) {
-            setSupportActionBar(miActionBar);
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
-
         }
-
     }
 
     @Override
@@ -51,11 +45,9 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
-
         switch (item.getItemId()) {
 
             case R.id.menu_likes:
@@ -76,32 +68,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-
     private ArrayList<Fragment> agregarFragments() {
-
         ArrayList<Fragment> fragments = new ArrayList<>();
-
         fragments.add(new RecyclerViewFragment());
         fragments.add(new PerfilFragment());
         fragments.add(new InstagramFragment());
-
         return fragments;
     }
 
     private void setUpViewPager() {
-
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
-
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.mipmap.home);
         tabLayout.getTabAt(1).setIcon(R.mipmap.profile_cat);
         tabLayout.getTabAt(2).setIcon(R.mipmap.instagram);
-
-
     }
-
 }
