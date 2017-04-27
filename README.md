@@ -13,3 +13,5 @@ El item "Acerca de" incluye mis datos.
 
 Se modulariza en fragments para mostrar la información en ViewPager. Un fragment corresponde al Inicio, otro al perfil de la mascota y el último al Instagram de la misma.
 Por último se genera persistencia de likes.
+
+![image](https://github.com/mari709/Petagram/blob/master/Screenshot_20161230-214045.png?raw=true)
